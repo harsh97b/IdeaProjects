@@ -21,15 +21,21 @@ Write a Java (or C/C++) program which does following:
     arr1           arr2            arr3            arr4         region        country
 
     1.0            2.0              3.0             4.0          asia            india
+    
     5.0            6.0              7.0             8.0          europe       france
+    
     9.0           10.0            11.0            12.0         asia           india
+    
     13.0         14.0             15.0           16.0        europe       germany
+    
     17.0          18.0            19.0           20.0        europe       france
 
     Output of the program would be
 
     asia       india        52.0
+    
     europe  france      100.0
+    
     europe  germany   58.0
 
     - You can assume that each input array can be read from a separate file. Expression 
