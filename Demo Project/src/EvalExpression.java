@@ -3,9 +3,11 @@ import java.util.Arrays;
 
 public class EvalExpression {
     public static double[] result;
-    public static void start(){
+    public static void start(String expr){
 //        String expr = "a1*a2+a3/a4";
-        String expr = "a1+a2+a3+a4";
+
+        if(expr == null)
+                expr = "a1+a2+a3+a4";
         try {
             evalExpr(expr, ReadInputs.arr1, ReadInputs.arr2, ReadInputs.arr3, ReadInputs.arr4, ReadInputs.region,  ReadInputs.country);
         } catch (SQLException e) {

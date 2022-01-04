@@ -2,10 +2,9 @@ import java.io.IOException;
 
 public class Home {
     public static void main(String args[]) throws IOException {
-        System.out.println("here in main");
+        String expr = null;
+        expr = "a1+a2+a3+a4";
         ReadInputs.readInputs();
-//        ReadInputs.read();
-//        Evaluate.evalExp();
-        EvalExpression.start();
+        EvalExpression.start(expr);
     }
 }
