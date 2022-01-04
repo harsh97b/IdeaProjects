@@ -60,7 +60,7 @@ and below are the MySql queries for setting up the database
 
 create database regional_data;
 use regional_data;
-create table data(arr1 float, arr2 float, arr3 float, arr4 float, region varchar(20), country varchar(20));
+create table data(arr1 double, arr2 double, arr3 double, arr4 double, region varchar(20), country varchar(20),res double);
 select * from data;
 
 ---------------------------------------------------------------------------------------------------------------------------
