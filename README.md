@@ -38,6 +38,8 @@ Write a Java (or C/C++) program which does following:
 2. Suppose you were given an 8-core machine. How will you make your program
     faster by distributing work across 8 cores? (Hint: Use threads to divide work.)
 
+
+
 Please send working programs for '1' and '2'. On an 8-core machine, how much faster 
 is your multi-threaded program compared to single-threaded program? Run and compare 
 runtimes for input sizes of 1 million, 5 million and 10 million. 
@@ -48,6 +50,7 @@ NOTE: You can create input files with random-values. OR repeat the provided exam
 Keep in mind good programming practices and readability of your programs.
 
 
+--------------------------------------------MySQL Queries-----------------------------------------------------------------
 create database regional_data;
 use regional_data;
 create table data(arr1 float, arr2 float, arr3 float, arr4 float, region varchar(20), country varchar(20));
@@ -59,3 +62,15 @@ select * from data;
 select sum(arr1+arr2+arr3+arr4),region, country from data group by region,country;
 select round(arr1*arr2+arr3/arr4,4) as res from data;
 select round(arr1*arr2+arr3/arr4,4) as result from data group by region, country;
+---------------------------------------------------------------------------------------------------------------------------
+Java will benefit from multiple cores, if the OS distribute threads over the available processors. 
+We can get the number of cores through Runtime.getRuntime().availableProcessors(), we will get 8 for 8 core machine.
+But using a higher number of threads than the number of cores present in a machine can simply be a waste of resources.
+A JVM runs in a single process and threads in a JVM share the heap belonging to that process.
+Java will utilize the underlying OS threads to do the actual job of executing the code on different CPUs, if running on a multi-CPU machine. 
+When each Java thread is started, it creates an associated OS thread and the OS is responsible for scheduling, etc.. 
+The JVM certain does some management and tracking of the thread and Java language constructs like volatile, synchronized, notify(), wait(), etc. all affect the run status of the OS thread.
+Threads get their performance improvements from a couple of reasons. Obviously straight concurrency often makes the program run faster. 
+Being able to do multiple CPU tasks at the same time can (though not always) improve the throughput of the application. 
+You are also able to isolate IO operations to a single thread meaning that other threads can be running while a thread is waiting on IO (read/write to disk/network, etc.).
+But in terms of memory, threads get a lot of their performance improvements because of local per-CPU cached memory.
