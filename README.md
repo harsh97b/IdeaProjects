@@ -13,8 +13,7 @@ Write a Java (or C/C++) program which does following:
     - Array country contains names of countries
     - All arrays have same number of elements (10 million or more)
 
-    expr needs to be applied to elements of arrays (arr1, arr2, arr3, arr4). Then result needs 
-    to be grouped (summed up) based on region and country.
+    expr needs to be applied to elements of arrays (arr1, arr2, arr3, arr4). Then result needs to be grouped (summed up) based on region and country.
 
     Example: If the expression is "a1 + a2 + a3 + a4" and the 6 arrays are:
 
