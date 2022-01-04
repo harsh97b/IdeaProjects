@@ -52,25 +52,33 @@ Keep in mind good programming practices and readability of your programs.
 -------------------------------------------------------------------------------------------------------------------
 
 For solution of Question 1: go to  IdeaProjects/Demo Project/src/ and see Home.java
+
 I am taking the input from a text file Inputs.txt (Locaiton: IdeaProjects/Demo Project/src/Inputs.txt)
+
 please include the mysql-connector-java-8.0.27.jar file in your project before running it.(loaction: IdeaProjects/Demo Project/src/mysql-connector-java-8.0.27.jar)
+
 and below are the MySql queries for setting up the database
 
 --------------------------------------------MySQL Queries-----------------------------------------------------------------
 
 create database regional_data;
+
 use regional_data;
+
 create table data(arr1 double, arr2 double, arr3 double, arr4 double, region varchar(20), country varchar(20),res double);
+
 select * from data;
 
 ---------------------------------------------------------------------------------------------------------------------------
 Java will benefit from multiple cores, if the OS distribute threads over the available processors. 
 We can get the number of cores through Runtime.getRuntime().availableProcessors(), we will get 8 for 8 core machine.
 But using a higher number of threads than the number of cores present in a machine can simply be a waste of resources.
+
 A JVM runs in a single process and threads in a JVM share the heap belonging to that process.
 Java will utilize the underlying OS threads to do the actual job of executing the code on different CPUs, if running on a multi-CPU machine. 
 When each Java thread is started, it creates an associated OS thread and the OS is responsible for scheduling, etc.. 
 The JVM certain does some management and tracking of the thread and Java language constructs like volatile, synchronized, notify(), wait(), etc. all affect the run status of the OS thread.
+
 Threads get their performance improvements from a couple of reasons. Obviously straight concurrency often makes the program run faster. 
 Being able to do multiple CPU tasks at the same time can (though not always) improve the throughput of the application. 
 You are also able to isolate IO operations to a single thread meaning that other threads can be running while a thread is waiting on IO (read/write to disk/network, etc.).
